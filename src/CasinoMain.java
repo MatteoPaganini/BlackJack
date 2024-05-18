@@ -16,10 +16,25 @@ public class CasinoMain {
                 Card c = new Card(i, f);
                 deck[counter] = c;
                 counter ++;
-//                deck[i - 1].printCard();
             }
         }
+        shuffle();
         printDeck();
+        deal();
+    }
+
+    public void shuffle(){
+        //first, swap, deck[0] and deck [1] cards
+        Card temp = deck[0];
+        int r = (int)(Math.random()*52);
+        deck[0] = deck [r];
+        deck[r] = temp;
+        //eventually loop through all deck
+        //swapping each card into a random index
+    }
+
+    public void deal(){
+
     }
 
     public void printDeck(){
