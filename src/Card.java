@@ -1,7 +1,7 @@
 public class Card {
-    int cardNum;
-    int points;
-    String suitName;
+    public int cardNum;
+    public int points;
+    public String suitName;
     public int suitNum;
     String cardName;
 
