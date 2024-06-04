@@ -1,8 +1,16 @@
 public class Player {
     public String Hand;
     public int points;
-    public Player (){
-
+    public Card [] hand;
+    public Player () {
+        hand = new Card[2];
     }
-    Card [] hand;
+
+    public void printHand () {
+        for (int x = 0; x < hand.length; x++){
+            hand[x].printCard();
+        }
+    }
+
+
 }

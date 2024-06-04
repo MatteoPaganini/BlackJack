@@ -2,6 +2,8 @@ import java.util.Map;
 
 public class CasinoMain {
     public Card[] deck;
+    public Player[] players;
+
     public static void main(String[] args) {
         CasinoMain m = new CasinoMain();
     }
@@ -20,7 +22,14 @@ public class CasinoMain {
             }
         }
         shuffle();
-        printDeck();
+//        printDeck();
+
+        players = new Player[4];
+        //construct players array
+        for (int p = 0; p < 4; p++){
+            players[p] = new Player();
+        }
+
         deal();
     }
 
@@ -29,22 +38,31 @@ public class CasinoMain {
 
         for (int x = 0; x < 52; x++ ){
 
-        Card temp = deck[x];
-        int r = (int)(Math.random()*52);
-        deck[0] = deck [r];
-        deck[r] = temp; }
+            int r = (int)(Math.random()*52);
+            Card temp = deck[x];
+            deck[x] = deck [r];
+            deck[r] = temp;
+        }
         //eventually loop through all deck
         //swapping each card into a random index
     }
 
     public void deal(){
 
+        for (int x = 0; x < players.hand.length; x++){
+            players.hand[x] = deck[x];
+        }
+        players.printHand();
+
+
+        // print all player hands here with a for loop
+
     }
 
     public void printDeck(){
         //for loop to loop through all cards
         //for each card
-        for (int i = 0; i <= 52; i++){
+        for (int i = 0; i < 52; i++){
             deck[i].printCard();
         }
     }
